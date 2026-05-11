@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:16.4
+    container_name: magdala-dev-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: magdala
+      POSTGRES_PASSWORD: dev_password
+      POSTGRES_DB: magdala
+    volumes:
+      - dev_pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: magdala-dev-adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  dev_pgdata
