@@ -10,7 +10,7 @@ echo "Running database migrations..."
 pnpm db:migrate
 
 echo "Building next.js app..."
-pnpm buld
+pnpm build
 
 echo "Restarting application..."
 pm2 restart magdala
