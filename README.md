@@ -1,14 +1,14 @@
 # Local Development
 
-# Clone Repo
+### Clone Repo
 - git clone git@github.com:ChanceBentulan/magdala.git
 - cd magdala
 - pnpm install
 
-# Start database
+### Start database
 - docker compose -f docker-compose.dev.yml up -d
 
-# Run Next.js
+### Run Next.js
 - pnpm dev
 
-# open http://localhost:3000
+### open http://localhost:3000
