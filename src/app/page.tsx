@@ -1,9 +1,20 @@
 import { db } from "@/db";
 import { photos } from "@/db/schema";
 import { createPhoto } from "./actions";
+import { auth, signOut } from "@/auth";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
+  const session = await auth();
+  if (!session?.user) {
+    redirect("/login");
+  }
   const allPhotos = await db.select().from(photos);
+
+  async function handleLogout() {
+    "use server";
+    await signOut({redirectTo: "/login"});
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -11,6 +22,17 @@ export default async function Home() {
         <h1 className="text-3xl font-bold mb-8">
           Magdala Photo Memorial
         </h1>
+
+        <div className="flex items-center justify-between mb-8">
+          <p className="text-gray-600">
+            Logged in as: <span className="font-medium">{session.user.name}</span> ({session.user.email})
+          </p>
+          <form action={handleLogout}>
+            <button type="submit" className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+              Logout
+            </button>
+          </form>
+        </div>
 
         <div className="bg-white rounded-lg shadow p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4"> Add New Photo</h2>

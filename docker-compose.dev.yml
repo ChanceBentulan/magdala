@@ -22,4 +22,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  dev_pgdata
+  dev_pgdata:
