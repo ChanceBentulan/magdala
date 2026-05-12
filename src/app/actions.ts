@@ -14,6 +14,7 @@ export async function createPhoto(formData: FormData) {
         title,
         description,
         imageUrl,
+        userId: 1,
         year
     });
 
