@@ -1,0 +1,37 @@
+# Dependencies                                                                                                                                                                               
+node_modules                                                                                                                                                                                 
+.pnpm-store                                                                                                                                                                                  
+                                                                                                                                                                                            
+# Next.js                                                                                                                                                                                    
+.next                                                                                                                                                                                        
+out                                                                                                                                                                                          
+                                                                                                                                                                                            
+# Environment files                                                                                                                                                                          
+.env                                                                                                                                                                                         
+.env.local                                                                                                                                                                                   
+.env*.local                                                                                                                                                                                  
+                                                                                                                                                                                            
+# Git                                                                                                                                                                                        
+.git                                                                                                                                                                                         
+.gitignore                                                                                                                                                                                   
+                                                                                                                                                                                            
+# IDE                                                                                                                                                                                        
+.vscode                                                                                                                                                                                      
+.idea                                                                                                                                                                                        
+                                                                                                                                                                                            
+# OS                                                                                                                                                                                         
+.DS_Store                                                                                                                                                                                    
+Thumbs.db                                                                                                                                                                                    
+                                                                                                                                                                                            
+# Testing                                                                                                                                                                                    
+coverage                                                                                                                                                                                     
+*.log                                                                                                                                                                                        
+                                                                                                                                                                                            
+# Docker                                                                                                                                                                                     
+Dockerfile                                                                                                                                                                                   
+docker-compose*.yml                                                                                                                                                                          
+.dockerignore                                                                                                                                                                                
+                                                                                                                                                                                            
+# Documentation                                                                                                                                                                              
+README.md                                                                                                                                                                                    
+*.md                              
