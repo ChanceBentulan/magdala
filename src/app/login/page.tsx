@@ -16,7 +16,7 @@ export default function LoginPage() {
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
             <div className="max-w-md w-full bg-white rounded-lg shadow p-8">
-                <h1 className="text-2xl font-bold mb-6">Login</h1>
+                <h1 className="text-2xl font-bold mb-6">Login to account</h1>
 
                 <form action={handleLogin} className="space-y-4">
                     <div>
