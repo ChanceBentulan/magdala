@@ -10,7 +10,7 @@ export default function LoginPage() {
   return (
     <main className="flex h-dvh bg-[#0F172A]">
       {/* Form panel */}
-      <section className="flex w-full flex-col overflow-y-auto px-4 py-12 lg:w-2/5 lg:py-[7.5rem]">
+      <section className="flex w-full flex-col overflow-y-auto px-4 py-12 lg:w-3/5 lg:py-16 lg:px-14">
         <div className="mx-auto w-full max-w-[440px]">
           <div className="mb-6 flex flex-col gap-1">
             <h1 className={`${dmSerifDisplay.className} text-balance text-[35px] text-slate-100`}>
