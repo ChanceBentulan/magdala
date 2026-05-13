@@ -1,63 +1,28 @@
-import { signIn } from "@/auth";
+import { DM_Serif_Display } from "next/font/google";
+import { LoginForm } from "./LoginForm";
+
+const dmSerifDisplay = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export default function LoginPage() {
-    async function handleLogin(formData: FormData) {
-        "use server";
-        const email = formData.get("email") as string;
-        const password = formData.get("password") as string;
-
-        await signIn("credentials", {
-            email,
-            password,
-            redirectTo: "/"
-        });
-    }
-
-    return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
-            <div className="max-w-md w-full bg-white rounded-lg shadow p-8">
-                <h1 className="text-2xl font-bold mb-6">Login</h1>
-
-                <form action={handleLogin} className="space-y-4">
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                            className="w-full border rounded px-3 py-2"
-                        />
-                    </div>
-
-                    <div>
-                        <label htmlFor="password" className="block text-sm font-medium mb-1">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            required
-                            className="w-full border rounded px-3 py-2"
-                        />
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-                    >
-                        Login
-                    </button>
-                </form>
-
-                <p className="mt-4 text-center text-sm text-gray-600">
-                    Don't have an account? {" "}
-                    <a href="/register" className="text-blue-600 hover:underline">
-                        Register
-                    </a>
-                </p>
-            </div>
+  return (
+    <main className="flex h-dvh bg-[#0F172A]">
+      {/* Form panel */}
+      <section className="flex w-full flex-col overflow-y-auto px-4 py-12 lg:w-3/5 lg:py-16 lg:px-14">
+        <div className="mx-auto w-full max-w-[440px]">
+          <div className="mb-6 flex flex-col gap-1">
+            <h1 className={`${dmSerifDisplay.className} text-balance text-[35px] text-slate-100`}>
+              Sign in
+            </h1>
+            <p className="text-pretty text-[14px] text-slate-400">
+              Welcome back. Sign in to continue to your account.
+            </p>
+          </div>
+          <LoginForm />
         </div>
-    )
+      </section>
+    </main>
+  );
 }
-
-
